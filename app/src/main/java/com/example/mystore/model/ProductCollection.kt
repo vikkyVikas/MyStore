@@ -11,9 +11,9 @@ data class ProductCollection(
 )
 enum class CollectionType { Normal, Highlight }
 
-object SnackRepo {
-    fun getSnacks(): List<ProductCollection> = productCollections
-    fun getSnack(snackId: Long) = products.find { it.id == snackId }!!
+object ProductRepo {
+    fun getProduct(): List<ProductCollection> = productCollections
+    fun getProduct(snackId: Long) = products.find { it.id == snackId }!!
     fun getRelated(@Suppress("UNUSED_PARAMETER") snackId: Long) = related
     fun getInspiredByCart() = inspiredByCart
     fun getFilters() = filters
@@ -83,6 +83,6 @@ private val cart = listOf(
 
 @Immutable
 data class OrderLine(
-    val snack: Product,
+    val Product: Product,
     val count: Int
     )
