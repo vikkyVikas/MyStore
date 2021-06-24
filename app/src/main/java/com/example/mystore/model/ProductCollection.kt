@@ -6,7 +6,7 @@ import androidx.compose.runtime.Immutable
 data class ProductCollection(
     val id: Long,
     val name: String,
-    val snacks: List<Product>,
+    val products: List<Product>,
     val type: CollectionType = CollectionType.Normal
 )
 enum class CollectionType { Normal, Highlight }
@@ -28,13 +28,13 @@ private val tastyTreats = ProductCollection(
     id = 1L,
     name = "Android's picks",
     type = CollectionType.Highlight,
-    snacks = products.subList(0, 13)
+    products = products.subList(0, 13)
 )
 
 private val popular = ProductCollection(
     id = 2L,
     name = "Popular on Jetsnack",
-    snacks = products.subList(14, 19)
+    products = products.subList(14, 19)
 )
 
 private val wfhFavs = tastyTreats.copy(
