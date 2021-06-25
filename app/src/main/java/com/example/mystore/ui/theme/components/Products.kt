@@ -201,6 +201,9 @@ fun HighlightProductItem(
     scroll:Int,
     modifier: Modifier=Modifier
 ){
+    val left= index * with(LocalDensity.current){
+        (HighlightCardWidth+ HighlightCardPadding).toPx()
+    }
 
 }
 
