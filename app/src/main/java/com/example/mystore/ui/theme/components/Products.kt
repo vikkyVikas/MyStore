@@ -32,6 +32,7 @@ import androidx.compose.material.icons.outlined.ArrowForward
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.focusModifier
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -200,12 +201,66 @@ fun HighlightProductItem(
     gradientWidth:Float,
     scroll:Int,
     modifier: Modifier=Modifier
-){
-    val left= index * with(LocalDensity.current){
-        (HighlightCardWidth+ HighlightCardPadding).toPx()
+) {
+    val left = index * with(LocalDensity.current) {
+        (HighlightCardWidth + HighlightCardPadding).toPx()
     }
+    MyStoreCard(
+        modifier = modifier
+            .size(
+                width = 170.dp,
+                height = 250.dp
+            )
+            .padding(bottom = 16.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .clickable(onClick = { onProductClick(product.id) })
+                .fillMaxSize()
+        ) {
+            Box(
+                modifier = Modifier
+                    .height(160.dp)
+                    .fillMaxWidth()
+            )
+            {
+                val gradientOffset = left - (scroll / 3f)
+                Box(
+                    modifier = Modifier
+                        .height(100.dp)
+                        .fillMaxWidth()
+                        .offsetGradientBackground(gradient, gradientWidth, gradientOffset)
+                )
+                ProductImage(
+                    imageUrl = product.imageUrl,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(120.dp)
+                        .align(Alignment.BottomCenter)
+                )
 
+            }
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = product.name,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                style = MaterialTheme.typography.h6,
+                color = MyStoreTheme.colors.textSecondary,
+                modifier = Modifier.padding(horizontal = 16.dp)
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = product.tagline,
+                style = MaterialTheme.typography.body1,
+                color = MyStoreTheme.colors.textHelp,
+                modifier = Modifier.padding(horizontal = 16.dp)
+            )
+        }
+    }
 }
+
+
 
 
 @Composable
@@ -234,7 +289,14 @@ fun ProductCardPreview()
 {
     MyStoreTheme {
         val product= products.first()
-
+        HighlightProductItem(
+            product = product,
+            onProductClick = { /*TODO*/ },
+            index =0 ,
+            gradient = MyStoreTheme.colors.gradient6_1,
+            gradientWidth = gradientWidth,
+            scroll =0
+        )
         
     }
 }
