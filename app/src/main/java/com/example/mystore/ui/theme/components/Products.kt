@@ -35,6 +35,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.focusModifier
 
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.platform.LocalDensity
@@ -273,7 +274,7 @@ fun ProductImage(
     MyStoreSurface (
         color=Color.LightGray,
         elevation=elevation,
-        shape= CircleShape,
+        shape= RectangleShape,
         modifier = modifier
             ){
             Image(painter = rememberCoilPainter(request = imageUrl,previewPlaceholder = R.drawable.placeholder), contentDescription = contentDescription, modifier=Modifier.fillMaxSize(),contentScale= ContentScale.Crop )
