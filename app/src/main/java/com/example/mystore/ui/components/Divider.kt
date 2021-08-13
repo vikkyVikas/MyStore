@@ -1,4 +1,4 @@
-package com.example.mystore.ui.theme.components
+package com.example.mystore.ui.components
 
 
 import android.content.res.Configuration
@@ -8,7 +8,6 @@ import androidx.compose.material.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp

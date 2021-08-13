@@ -1,4 +1,4 @@
-package com.example.mystore.ui.theme.components
+package com.example.mystore.ui.components
 
 /*
  * Copyright 2020 The Android Open Source Project

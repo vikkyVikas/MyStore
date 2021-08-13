@@ -1,9 +1,7 @@
-package com.example.mystore.ui.theme.components
+package com.example.mystore.ui.components
 
-import android.provider.MediaStore
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.layout.Layout
 
 @Composable

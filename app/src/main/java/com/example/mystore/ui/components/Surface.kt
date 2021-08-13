@@ -1,4 +1,4 @@
-package com.example.mystore.ui.theme.components
+package com.example.mystore.ui.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background

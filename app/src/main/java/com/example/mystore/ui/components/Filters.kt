@@ -1,4 +1,4 @@
-package com.example.mystore.ui.theme.components
+package com.example.mystore.ui.components
 
 import android.content.res.Configuration
 import androidx.compose.animation.animateColorAsState
@@ -10,7 +10,6 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 
@@ -29,7 +28,6 @@ import androidx.compose.ui.unit.dp
 import com.example.mystore.R
 import com.example.mystore.model.Filter
 import com.example.mystore.ui.theme.MyStoreTheme
-import kotlin.math.max
 
 @Composable
 fun FilterBar(filters:List<Filter>){
