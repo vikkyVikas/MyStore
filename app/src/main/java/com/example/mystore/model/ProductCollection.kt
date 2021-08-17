@@ -83,6 +83,6 @@ private val cart = listOf(
 
 @Immutable
 data class OrderLine(
-    val Product: Product,
+    val product: Product,
     val count: Int
     )
